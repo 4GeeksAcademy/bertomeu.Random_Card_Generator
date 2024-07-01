@@ -6,8 +6,8 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 function generateCard() {
-  const suits = ["spade", "club", "heart", "diamond"];
-  const values = [
+  let suits = ["spade", "club", "heart", "diamond"];
+  let values = [
     "2",
     "3",
     "4",
@@ -22,17 +22,17 @@ function generateCard() {
     "K",
     "A"
   ];
-  const symbols = { spade: "♠", club: "♣", heart: "♥", diamond: "♦" };
+  let symbols = { spade: "♠", club: "♣", heart: "♥", diamond: "♦" };
 
-  const randomSuit = suits[Math.floor(Math.random() * suits.length)];
-  const randomValue = values[Math.floor(Math.random() * values.length)];
+  let randomSuit = suits[Math.floor(Math.random() * suits.length)];
+  let randomValue = values[Math.floor(Math.random() * values.length)];
 
-  const cardDiv = document.getElementById("card");
+  let cardDiv = document.getElementById("card");
   cardDiv.className = `card ${randomSuit}`;
 
-  const topLeftDiv = cardDiv.querySelector(".top-left");
-  const bottomRightDiv = cardDiv.querySelector(".bottom-right");
-  const centerDiv = cardDiv.querySelector(".center");
+  let topLeftDiv = cardDiv.querySelector(".top-left");
+  let bottomRightDiv = cardDiv.querySelector(".bottom-right");
+  let centerDiv = cardDiv.querySelector(".center");
 
   topLeftDiv.innerHTML = symbols[randomSuit];
   bottomRightDiv.innerHTML = symbols[randomSuit];
