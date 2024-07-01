@@ -6,6 +6,7 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 function generateCard() {
+  // Definimos los datos
   let suits = ["spade", "club", "heart", "diamond"];
   let values = [
     "2",
@@ -23,22 +24,22 @@ function generateCard() {
     "A"
   ];
   let symbols = { spade: "♠", club: "♣", heart: "♥", diamond: "♦" };
-
+  // Seleccion aleatoria
   let randomSuit = suits[Math.floor(Math.random() * suits.length)];
   let randomValue = values[Math.floor(Math.random() * values.length)];
 
   let cardDiv = document.getElementById("card");
-  cardDiv.className = `card ${randomSuit}`;
-
+  cardDiv.className = `card ${randomSuit}`; // Asignamos clases al div de la carta
+  // Obtenemos los elementos de las cartas
   let topLeftDiv = cardDiv.querySelector(".top-left");
   let bottomRightDiv = cardDiv.querySelector(".bottom-right");
   let centerDiv = cardDiv.querySelector(".center");
-
+  // Colocamos los simbolos y valor en los div
   topLeftDiv.innerHTML = symbols[randomSuit];
   bottomRightDiv.innerHTML = symbols[randomSuit];
   centerDiv.innerHTML = randomValue;
 }
-
+// Asigna la función generateCard al botón con id "generateButton"
 window.onload = function() {
   generateCard();
   document.getElementById("generateButton").onclick = generateCard;
